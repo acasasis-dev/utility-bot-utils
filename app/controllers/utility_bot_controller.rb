@@ -76,7 +76,7 @@ class UtilityBotController < ActionController::Base
 		link = sanitize( params[:link] )
 		title = sanitize( params[:title] )
 		newsp = sanitize( params[:newsp] )
-		news_info = [ params[:link], params[:title], params[:newsp] ]
+		news_info = [ link, title, newsp ]
 		eval "crawl_" + @@supported_news_providers[:"#{news_info[2]}"] + "( news_info )"
 	end
 
